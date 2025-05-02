@@ -7,12 +7,17 @@ import {
 } from "react-router-dom";
 import { ScreenLoader } from "./components/shared/ScreenLoader";
 import Root from "./pages/Root";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-  }
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ])
 
 
