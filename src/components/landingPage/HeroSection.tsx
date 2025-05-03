@@ -21,7 +21,7 @@ export const HeroSection = () => {
               Access to credit, Build Wealth. Stay in control
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex  gap-4">
               <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-md transition-colors text-sm">
                 HOW WE WORK
               </button>
@@ -33,9 +33,9 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Column - Image or Custom Illustration */}
-          <div className="lg:w-[45%] -mt-36">
+          <div className="lg:w-[45%] lg:-mt-36">
             <div className="">
-              <img src={heroImg} alt="hero" className="" />
+              <img src={heroImg} alt="hero" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

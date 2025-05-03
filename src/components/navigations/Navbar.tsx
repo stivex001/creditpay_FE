@@ -16,7 +16,7 @@ import {
   
   export const Navbar = () => {
     return (
-      <div className="bg-[#142B71] text-white py-4 sticky top-0 z-50">
+      <div className="bg-[#142B71] text-white py-4 px-3 lg:px-0 sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between">
           {/* Logo */}
           <div className="w-24">
