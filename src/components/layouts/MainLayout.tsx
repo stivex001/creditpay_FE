@@ -14,7 +14,7 @@ const MainLayout = ({ children }: Props) => {
       <ScrollToTop />
       <div>
         <Navbar />
-        <main className="p-4">{children}</main>
+        <main className="">{children}</main>
         <Footer />
       </div>
     </>
