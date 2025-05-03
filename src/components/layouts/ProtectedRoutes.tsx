@@ -1,15 +1,15 @@
-import { useAuthStore } from "@/store/authStore";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+// import { useAuthStore } from "@/store/authStore";
+// import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-const ProtectedRoutes = () => {
-  const { accessToken, currentUser } = useAuthStore();
-  const location = useLocation();
+// const ProtectedRoutes = () => {
+//   const { accessToken, currentUser } = useAuthStore();
+//   const location = useLocation();
 
-  if (!accessToken || !currentUser) {
-    return <Navigate to="/auth/login" state={{ from: location }} replace />;
-  }
+//   if (!accessToken || !currentUser) {
+//     return <Navigate to="/auth/login" state={{ from: location }} replace />;
+//   }
 
-  return <Outlet />;
-};
+//   return <Outlet />;
+// };
 
-export default ProtectedRoutes;
+// export default ProtectedRoutes;

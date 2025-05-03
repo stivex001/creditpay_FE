@@ -1,7 +1,6 @@
 import { ReactNode, useState } from "react";
 import authDetails from "@/assets/images/newImg.png";
 import { motion } from "framer-motion";
-import { SkipIcon } from "@/assets/svgs/SkipIcon";
 import logo from "../../../public/logo.png";
 
 type Props = {
@@ -123,7 +122,6 @@ const AuthLayout = ({ children }: Props) => {
           className="mt-10 flex items-center justify-center cursor-pointer"
           onClick={handleSkip}
         >
-          <SkipIcon />
         </div>
       </div>
     </div>
