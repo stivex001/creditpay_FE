@@ -16,7 +16,7 @@ const actions = [
 
 export const OurGoalsSection = () => {
   return (
-    <section className="space-y-16 mb-28">
+    <section className=" mb-28">
       <div className="text-center mb-16">
         <h1 className="font-semibold text-3xl text-[#142B71]">OUR GOALS</h1>
         <Heading title="Archive Financial Goals" />
