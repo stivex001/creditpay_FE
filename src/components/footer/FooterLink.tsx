@@ -9,7 +9,7 @@ export const FooterLinkSection = ({ title, links }: FooterLinkProps) => {
   return (
     <div className="flex flex-col space-y-2">
       <h3 className="text-white font-semibold mb-4">{title}</h3>
-      <div className="flex flex-col space-y-2">
+      <div className="flex flex-col space-y-4">
         {links.map((link, index) => (
           <a
             key={index}
