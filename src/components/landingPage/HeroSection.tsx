@@ -22,11 +22,11 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex  gap-4">
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-md transition-colors text-sm">
+              <button className="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-md transition-colors text-sm">
                 HOW WE WORK
               </button>
 
-              <button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-md transition-colors text-sm">
+              <button className="bg-yellow-400 cursor-pointer hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-md transition-colors text-sm">
                 MY STATISTICS
               </button>
             </div>

@@ -15,7 +15,7 @@ const actions = [
 export const ActionSection = () => {
   return (
     <section className="container mx-auto bg-[#142B71] rounded-xl py-24 mb-14">
-      <div className="w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 place-items-center">
+      <div className="w-10/12 mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 ">
         {actions.map(({ label, icon }) => (
           <div
             key={label}

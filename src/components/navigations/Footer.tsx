@@ -2,12 +2,10 @@ import { FooterLinkSection } from "../footer/FooterLink";
 import { EmailSubscription } from "../footer/EmailSubscribtion";
 import { SocialIcon } from "../footer/SocialIcon";
 import { QRCode } from "../footer/QRcode";
-import { AppStoreIcon,GooglePlay } from "@/assets/icons/AppDownloadIcon";
+import { AppStoreIcon, GooglePlay } from "@/assets/icons/AppDownloadIcon";
 
 const supportLinks = [
-  { text: "27, Plot Ajijikla,", url: "#" },
-  { text: "Ajirnobi Ln, Abule", url: "#" },
-  { text: "Egba, Lagos State.", url: "#" },
+  { text: "27, Plot Ajijikla,Ajirnobi Ln, Abule Egba, Lagos State.", url: "#" },
   { text: "info@CreditPay.com", url: "mailto:info@CreditPay.com" },
   { text: "+234 902 920 0928", url: "tel:+2349029200928" },
 ];
@@ -16,8 +14,6 @@ const accountLinks = [
   { text: "My Account", url: "/my-account" },
   { text: "Login / Register", url: "/login" },
   { text: "Loan Request", url: "/loan-request" },
-  { text: "Transactions", url: "/transactions" },
-  { text: "Bill payment", url: "/bill-payment" },
 ];
 
 const quickLinks = [
@@ -40,10 +36,7 @@ const Footer = () => {
             <EmailSubscription />
           </div>
 
-          <FooterLinkSection title="Support" links={supportLinks} />
-
           <FooterLinkSection title="Account" links={accountLinks} />
-
           <FooterLinkSection title="Quick Link" links={quickLinks} />
 
           <div className="">
@@ -135,6 +128,7 @@ const Footer = () => {
               </SocialIcon>
             </div>
           </div>
+          <FooterLinkSection title="Support" links={supportLinks} />
         </div>
 
         {/* Social icons and copyright */}
