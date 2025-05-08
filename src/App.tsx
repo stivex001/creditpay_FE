@@ -9,6 +9,7 @@ import { ScreenLoader } from "./components/shared/ScreenLoader";
 import Root from "./pages/Root";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import About from "./pages/About"
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,17 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "about",
+        element: <About />,
+      }
     ],
   },
   {
     path: "*",
-    element: <NotFound />,
+    element: <NotFound/>
   },
+  
 ]);
 
 function App() {
