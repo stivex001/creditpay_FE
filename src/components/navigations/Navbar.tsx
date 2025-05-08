@@ -1,17 +1,15 @@
 import {
     AboutIcon,
-    AccountIcon,
     HomeIcon,
-    TransactionIcon,
   } from "@/assets/icons/NavigationIcons";
   import logo from "@/assets/logo.png";
   import { NavLink } from "react-router-dom";
   
   const navLinks = [
     { label: "Home", icon: <HomeIcon />, href: "/" },
-    { label: "Transaction", icon: <TransactionIcon />, href: "/transaction" },
+    // { label: "Transaction", icon: <TransactionIcon />, href: "/transaction" },
     { label: "About Us", icon: <AboutIcon />, href: "/about" },
-    { label: "Account", icon: <AccountIcon />, href: "/account" },
+    // { label: "Account", icon: <AccountIcon />, href: "/account" },
   ];
   
   export const Navbar = () => {
@@ -25,18 +23,17 @@ import {
   
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-16 text-sm">
-            {navLinks.map(({ label, icon, href }) => (
+            {navLinks.map(({ label, href }) => (
               <NavLink
                 key={label}
                 to={href}
                 className={({ isActive }) =>
-                  `flex flex-col items-center gap-1 transition-opacity ${
-                    isActive ? "text-white opacity-100" : "opacity-70 hover:opacity-100"
+                  `flex flex-col items-center gap-1 transition-opacity ease-in ${
+                    isActive ? "text-white " : "text-[#A4BEFF]  hover:text-white"
                   }`
                 }
               >
-                <div>{icon}</div>
-                <span>{label}</span>
+                <span className="font-medium text-2xl">{label}</span>
               </NavLink>
             ))}
           </div>
