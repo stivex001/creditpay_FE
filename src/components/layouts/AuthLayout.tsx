@@ -1,29 +1,26 @@
 import { ReactNode } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/images/logo2.svg";
+import { Link } from "react-router-dom";
 
 type Props = {
   children: ReactNode;
+  authImg: any;
 };
 
-const AuthLayout = ({ children }: Props) => {
-
-
+const AuthLayout = ({ children, authImg }: Props) => {
   return (
-    <div className="flex w-full h-full  no-scrollbar bg-gray1">
-      <div className="flex-1 flex flex-col gap-8 px-6 lg:px-24 py-9">
-        <div className="flex-start w-[188px] lg:w-[249px] lg:h-[89px]">
-          <img src={logo} />
+    <div className="flex w-full min-h-screen">
+      <div className="flex-1 bg-[#A4BEFF5C] flex flex-col justify-center items-center ">
+        <Link to="/">
+          <img src={logo} className="pt-10" />
+        </Link>
+
+        <div className="">
+          <img src={authImg} alt="" className=" -mt-20" />
         </div>
-        {children}
       </div>
-      <div className="hidden flex-1 lg:flex flex-col items-center py-16 px-12 bg-authbg bg-cover bg-no-repeat no-scrollbar">
-        <div className="w-[600px] mb-14">
-          {/* <img
-            src={slidesData[currentSlide].image}
-            alt="description"
-            className="w-full h-full object-cover"
-          /> */}
-        </div>
+      <div className="flex-1 flex flex-col gap-8 px-6 lg:px-24 justify-center items-center py-16">
+        {children}
       </div>
     </div>
   );

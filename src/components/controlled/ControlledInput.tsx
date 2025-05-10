@@ -44,9 +44,9 @@ const ControlledInput: React.FC<ControlledInputProps> = ({
     rules,
   });
 
-  const baseStyles = "w-full h-14";
+  const baseStyles = "w-full h-10 border rounded-[10px] px-3";
   const styles = {
-    primary: "border-bordergray bg-gray1 focus:ring-primary",
+    primary: "border-[#A4BEFF]  focus:ring-[#A4BEFF]",
     secondary:
       "border border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500",
     tertiary:
@@ -70,7 +70,7 @@ const ControlledInput: React.FC<ControlledInputProps> = ({
     <div className={`space-y-3`}>
       <label
         htmlFor={name}
-        className={`text-base font-medium capitalize text-boxgray`}
+        className={`text-xl font-medium capitalize text-[#142B71]`}
       >
         {label}
       </label>

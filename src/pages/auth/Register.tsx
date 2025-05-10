@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useEffect } from "react";
@@ -9,6 +8,7 @@ import { auth } from "@/api/auth";
 import AuthLayout from "@/components/layouts/AuthLayout";
 import ControlledInput from "@/components/controlled/ControlledInput";
 import CustomButton from "@/components/controlled/CustomButton";
+import signupImg from "@/assets/images/signupimg.svg";
 
 const fields: Field[] = [
   {
@@ -88,24 +88,45 @@ const Register = () => {
   };
 
   return (
-    <AuthLayout>
+    <AuthLayout authImg={signupImg}>
       <div className="flex flex-col gap-10">
-        {/* <AuthTitle
-          title="Sign Up"
-          question="Already have an account ?"
-          link="Log In"
-          url="/auth/login"
-        /> */}
+        <div>
+          <h1 className="text-[#142B71] font-bold text-5xl leading-16 max-w-md">
+            Welcome to Credit<span className="font-normal">Pay</span>
+          </h1>
+          <p className="text-[#142B71] font-semibold text-4xl leading-16 ">
+            Enter your detail below
+          </p>
+        </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-7"
+          className="flex flex-col space-y-4"
         >
           <ControlledInput
-            name="name"
+            name="firstName"
             control={control}
-            placeholder="Enter full name"
+            placeholder="Enter First name"
             type="text"
-            label="Full Name"
+            label="First Name"
+            variant="primary"
+            rules={{ required: true }}
+          />
+
+          <ControlledInput
+            name="lastName"
+            control={control}
+            placeholder="Enter Last name"
+            type="text"
+            label="Last Name"
+            variant="primary"
+            rules={{ required: true }}
+          />
+            <ControlledInput
+            name="phoneNumber"
+            control={control}
+            placeholder=""
+            type="text"
+            label="Phone Number"
             variant="primary"
             rules={{ required: true }}
           />
@@ -140,7 +161,7 @@ const Register = () => {
 
           <div className="flex justify-center">
             <CustomButton
-              label="Sign Up"
+              label="Create Account"
               variant="primary"
               className="w-full"
               size="lg"

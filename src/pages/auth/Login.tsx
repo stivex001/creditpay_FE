@@ -1,8 +1,7 @@
-
 import { auth } from "@/api/auth";
 import AuthLayout from "@/components/layouts/AuthLayout";
 
-import { useLayoutEffect } from "react";
+// import { useLayoutEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useAuthStore } from "../../../store/authStore";
@@ -10,6 +9,7 @@ import useDynamicForm from "@/hooks/useDynamicForm";
 import ControlledInput from "@/components/controlled/ControlledInput";
 import CustomButton from "@/components/controlled/CustomButton";
 import { Field } from "schema/dynamicSchema";
+import loginImg from "@/assets/images/login.svg";
 
 const fields: Field[] = [
   {
@@ -29,15 +29,15 @@ const fields: Field[] = [
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { setAccessToken, accessToken, setCurrentUser } = useAuthStore();
+  const { setAccessToken, setCurrentUser } = useAuthStore();
 
   const { control, handleSubmit, formState } = useDynamicForm(fields, {});
 
-  useLayoutEffect(() => {
-    if (accessToken) {
-      navigate("/dashboard", { replace: true });
-    }
-  }, [navigate, accessToken]);
+  // useLayoutEffect(() => {
+  //   if (accessToken) {
+  //     navigate("/dashboard", { replace: true });
+  //   }
+  // }, [navigate, accessToken]);
 
   const { isValid } = formState;
 
@@ -57,7 +57,7 @@ const Login = () => {
               setCurrentUser(user);
             }
             toast.success("Login successfully!");
-            navigate(location.state?.from?.pathname || "/dashboard", {
+            navigate(location.state?.from?.pathname || "/", {
               replace: true,
             });
           } else {
@@ -74,24 +74,26 @@ const Login = () => {
   };
 
   return (
-    <AuthLayout>
+    <AuthLayout authImg={loginImg}>
       <div className="flex flex-col gap-10">
-        {/* <AuthTitle
-          title="Sign in"
-          question="Don’t have an account?"
-          link="Create now"
-          url="/auth/register"
-        /> */}
+        <div>
+          <h1 className="text-[#142B71] font-bold text-5xl leading-16 max-w-md">
+            Welcome to Credit<span className="font-normal">Pay</span>
+          </h1>
+          <p className="text-[#142B71] font-semibold text-4xl leading-16 ">
+            Enter your detail below
+          </p>
+        </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-7"
+          className="flex flex-col space-y-4"
         >
           <ControlledInput
             name="email"
             control={control}
-            placeholder="Enter Email"
-            type="email"
-            label="email"
+            placeholder=""
+            type="text"
+            label="Phone Number or Email"
             variant="primary"
             rules={{ required: true }}
           />
@@ -105,13 +107,18 @@ const Login = () => {
             rules={{ required: true }}
           />
 
-          <div className="flex items-center justify-between">
-            
+          <div className="flex items-center gap-5 justify-center">
             <Link
               to="/auth/forgot_password"
-              className="text-base font-medium underline text-primary"
+              className="text-base  text-black"
             >
               Forgot Password?
+            </Link>
+            <Link
+              to="/auth/register"
+              className="text-base  text-black underline"
+            >
+              Sign Up
             </Link>
           </div>
 
