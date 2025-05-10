@@ -5,7 +5,6 @@ import { cn } from "../../lib/utils";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineDateRange } from "react-icons/md";
-import { Input } from "@headlessui/react";
 import { EyeIcon } from "@/assets/icons/MenuIcon";
 
 type ControlledInputProps = {
@@ -21,7 +20,7 @@ type ControlledInputProps = {
   dontShowTime?: boolean;
   readOnly?: boolean;
   variant?: "primary" | "secondary" | "tertiary";
-} & React.ComponentProps<typeof Input>;
+} & React.ComponentProps<any>;
 
 const ControlledInput: React.FC<ControlledInputProps> = ({
   label,
@@ -55,7 +54,7 @@ const ControlledInput: React.FC<ControlledInputProps> = ({
     invalid: "border-red-500 focus:border-red-500 focus:ring-red-500",
   };
 
-  const inputClassName = cn(baseStyles, styles[variant], {
+  const inputClassName = cn(baseStyles, styles[variant as keyof typeof styles], {
     [styles.invalid]: invalid,
   });
 
@@ -102,7 +101,7 @@ const ControlledInput: React.FC<ControlledInputProps> = ({
             />
           </div>
         ) : (
-          <Input
+          <input
             id={name}
             name={name}
             type={type === "password" && showPassword ? "text" : type}

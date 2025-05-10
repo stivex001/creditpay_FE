@@ -10,7 +10,7 @@ const useDynamicForm = <T extends Record<string, any>>(
 ): UseFormReturn<T> => {
   const schema = createSchema(fields);
   const methods = useForm<T>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as any,
     defaultValues,
   });
   return methods;
