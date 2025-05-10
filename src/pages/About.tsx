@@ -1,5 +1,4 @@
-import React from 'react'
-import {PaymentInfo} from "./assets/people shaking hands.png"
+
 
 const About = () => {
   return (
@@ -32,7 +31,7 @@ const About = () => {
       {/*why choose us */}
       <div className='max-w-4xl mx-auto text-center'>
       <h2 className='text-2xl font-semibold mb-3 text-indigo-600 '>Why Choose Credit Pay</h2>
-       <ul className='list-disc list-inside list-decimal text-gray-700 text-lg space-y-2'>
+       <ul className=' list-inside list-decimal text-gray-700 text-lg space-y-2'>
         <li>
           Instant loan approvals and disbursement
         </li>

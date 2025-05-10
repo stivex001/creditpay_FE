@@ -9,7 +9,8 @@ import { ScreenLoader } from "./components/shared/ScreenLoader";
 import Root from "./pages/Root";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
-import About from "./pages/About"
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -20,12 +21,21 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "about",
-        element: <About />,
-      }
+      // {
+      //   path: "about",
+      //   element: <About />,
+      // }
     ],
   },
+  {
+    path: "/auth/login",
+    element: <Login />,
+  },
+  {
+    path: "/auth/register",
+    element: <Register />,
+  },
+
   {
     path: "*",
     element: <NotFound/>
