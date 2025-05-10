@@ -3,7 +3,7 @@ import {
     HomeIcon,
   } from "@/assets/icons/NavigationIcons";
   import logo from "@/assets/logo.png";
-  import { NavLink } from "react-router-dom";
+  import { Link, NavLink } from "react-router-dom";
   
   const navLinks = [
     { label: "Home", icon: <HomeIcon />, href: "/" },
@@ -40,10 +40,10 @@ import {
   
           {/* Auth Buttons */}
           <div className="flex items-center gap-4 text-sm">
-            <button className="font-semibold">Login</button>
-            <button className="bg-[#C6D5FF] text-[#142B71] py-1 px-4 rounded-sm font-semibold">
+            <Link to="/auth/login" className="font-semibold">Login</Link>
+            <Link to="/auth/register" className="bg-[#C6D5FF] text-[#142B71] py-1 px-4 rounded-sm font-semibold">
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
       </div>
