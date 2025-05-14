@@ -10,7 +10,7 @@ type Props = {
 const AuthLayout = ({ children, authImg }: Props) => {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="flex-1 bg-[#A4BEFF5C] flex flex-col justify-center items-center ">
+      <div className="hidden flex-1 bg-[#A4BEFF5C] lg:flex flex-col justify-center items-center ">
         <Link to="/">
           <img src={logo} className="pt-10" />
         </Link>

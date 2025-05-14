@@ -11,7 +11,8 @@ export interface AuthUser {
   id: ID;
   createdAt?: string;
   isActive: boolean;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   profile: string;
   password: string;

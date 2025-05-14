@@ -10,6 +10,7 @@ import ControlledInput from "@/components/controlled/ControlledInput";
 import CustomButton from "@/components/controlled/CustomButton";
 import { Field } from "schema/dynamicSchema";
 import loginImg from "@/assets/images/login.svg";
+import { useLayoutEffect } from "react";
 
 const fields: Field[] = [
   {
@@ -29,15 +30,15 @@ const fields: Field[] = [
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { setAccessToken, setCurrentUser } = useAuthStore();
+  const { setAccessToken, setCurrentUser, accessToken } = useAuthStore();
 
   const { control, handleSubmit, formState } = useDynamicForm(fields, {});
 
-  // useLayoutEffect(() => {
-  //   if (accessToken) {
-  //     navigate("/dashboard", { replace: true });
-  //   }
-  // }, [navigate, accessToken]);
+  useLayoutEffect(() => {
+    if (accessToken) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate, accessToken]);
 
   const { isValid } = formState;
 
@@ -108,10 +109,7 @@ const Login = () => {
           />
 
           <div className="flex items-center gap-5 justify-center">
-            <Link
-              to="/auth/forgot_password"
-              className="text-base  text-black"
-            >
+            <Link to="/auth/forgot_password" className="text-base  text-black">
               Forgot Password?
             </Link>
             <Link

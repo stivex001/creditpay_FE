@@ -12,7 +12,12 @@ import signupImg from "@/assets/images/signupimg.svg";
 
 const fields: Field[] = [
   {
-    name: "name",
+    name: "firstName",
+    type: "text",
+    isRequired: true,
+  },
+   {
+    name: "lastName",
     type: "text",
     isRequired: true,
   },
@@ -21,6 +26,12 @@ const fields: Field[] = [
     name: "email",
     type: "email",
     errorMessage: "Email is required",
+    isRequired: true,
+  },
+    {
+    name: "phoneNumber",
+    type: "text",
+    errorMessage: "Phone Number is required",
     isRequired: true,
   },
   {
@@ -38,13 +49,12 @@ const fields: Field[] = [
 
 const Register = () => {
   const navigate = useNavigate();
-  const { control, handleSubmit, formState, watch, setError, clearErrors } =
+  const { control, handleSubmit, watch, setError, clearErrors } =
     useDynamicForm<AuthUser>(fields, {});
 
   const password = watch("password");
   const confirmPassword = watch("confirmPassword");
 
-  const { isValid } = formState;
 
   const { registerUser } = auth();
 
@@ -166,7 +176,7 @@ const Register = () => {
               className="w-full"
               size="lg"
               type="submit"
-              disabled={!isValid}
+              // disabled={!isValid}
               isLoading={isPending}
             />
           </div>
